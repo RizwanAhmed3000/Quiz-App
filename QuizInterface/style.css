@@ -1,10 +1,15 @@
-*{
+* {
     box-sizing: border-box;
     margin: 0%;
     padding: 0%;
 }
 
-.overlay{
+body {
+    background-color: #eee2ff;
+}
+
+.overlay {
+    z-index: 10;
     background-color: #2b45d9;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80' width='80' height='80'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M0 0h80v80H0V0zm20 20v40h40V20H20zm20 35a15 15 0 1 1 0-30 15 15 0 0 1 0 30z' opacity='.5'%3E%3C/path%3E%3Cpath d='M15 15h50l-5 5H20v40l-5 5V15zm0 50h50V15L80 0v80H0l15-15zm32.07-32.07l3.54-3.54A15 15 0 0 1 29.4 50.6l3.53-3.53a10 10 0 1 0 14.14-14.14zM32.93 47.07a10 10 0 1 1 14.14-14.14L32.93 47.07z'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
     width: 100vw;
@@ -14,17 +19,17 @@
     transition: top ease 350ms;
 }
 
-.quizIntroHeading{
+.quizIntroHeading {
     font-family: 'Josefin Sans', sans-serif;
     color: white;
 }
 
-.quizIntroHeading h1{
+.quizIntroHeading h1 {
     text-shadow: 7px 7px 6px #212529;
     font-size: 4.5rem !important;
 }
 
-button {
+.overlayBtn {
     padding: 17px 40px;
     border-radius: 50px;
     border: 0;
@@ -36,37 +41,41 @@ button {
     transition: all .5s ease;
     width: 300px;
     font-weight: bold;
-   }
-   
-   button:hover {
+}
+
+.overlayBtn:hover {
     letter-spacing: 3px;
     background-color: rgb(31, 220, 24);
     color: hsl(0, 0%, 100%);
     box-shadow: rgb(31, 220, 24) 0px 7px 29px 0px;
-   }
-   
-   button:active {
+}
+
+.overlayBtn:active {
     letter-spacing: 3px;
     background-color: rgb(32, 229, 255);
     color: hsl(0, 0%, 100%);
     box-shadow: rgb(32, 229, 255) 0px 0px 0px 0px;
     transform: translateY(10px);
     transition: 100ms;
-   }
+}
+
+.navShadow {
+    box-shadow: 0px 2px 11px 0px #343a40;
+}
 
 /* Tablet */
 
-@media(min-width: 501px) and (max-width: 768px){
-    .quizIntroHeading h1{
+@media(min-width: 501px) and (max-width: 768px) {
+    .quizIntroHeading h1 {
         font-size: 3.5rem !important;
-    }  
+    }
 }
 
 /* SmartPhone */
 
 @media(min-width: 320px) and (max-width: 500px) {
 
-    .quizIntroHeading h1{
+    .quizIntroHeading h1 {
         font-size: 2.8rem !important;
     }
 
