@@ -63,6 +63,13 @@ body {
     box-shadow: 0px 2px 11px 0px #343a40;
 }
 
+.questionBox{
+    width: 70%;
+    height: 200px;
+    background-color: #2b45d9;
+    margin-top: 20px;
+}
+
 /* Tablet */
 
 @media(min-width: 501px) and (max-width: 768px) {
