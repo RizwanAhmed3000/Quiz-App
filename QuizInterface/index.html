@@ -70,37 +70,34 @@
     <!-- Question-Box -->
 
     <div class="questionBox d-flex justify-content-center align-items-center p-3">
-      <p id="question" class="text-center">Question Here! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore, dolorem! Magni, omnis eius praesentium earum asperiores ad delectus blanditiis saepe ea debitis temporibus voluptatibus porro modi facilis dolorem maiores iusto hic accusamus ullam dolore minima sunt. Necessitatibus dignissimos et optio itaque libero. Obcaecati fugiat voluptatibus saepe esse vitae quasi nulla eligendi dolor odio laudantium? Autem, dolorem beatae. Vel rerum fugit quibusdam distinctio iusto doloremque consectetur accusamus maxime harum velit nulla voluptate, eos consequatur facere asperiores iure earum dicta. Dolores iste saepe in eaque. Aliquam error dolorum consequatur, doloremque veritatis eum possimus laudantium recusandae tempora sint provident, quibusdam quidem vitae labore.</p>
+      <p id="question" class="text-center fw-bold">Question Here!</p>
     </div>
 
     <!-- Options -->
 
     <div class="optionBox mt-5 d-flex justify-content-center p-3 pb-0 flex-column">
-      <!-- <span class="mb-3 "><input type="radio" name="options" class="radioBtns" id=""><p class="mb-0 ms-3" style="display: inline;">Option 1</p></span>
-      <span class="mb-3 "><input type="radio" name="options" class="radioBtns" id=""><p class="mb-0 ms-3" style="display: inline;">Option 1</p></span>
-      <span class="mb-3 "><input type="radio" name="options" class="radioBtns" id=""><p class="mb-0 ms-3" style="display: inline;">Option 1</p></span> -->
-
+      
       <label for="options" class="mb-3">
-        <input type="radio" name="answers" id="optionInput1" class="inputRadioBtn">
+        <input type="radio" onclick="enableBtn()" name="answers" id="optionInput1" class="inputRadioBtn">
         <span id="option1"></span>
       </label>
       <label for="options" class="mb-3">
-        <input type="radio" name="answers" id="optionInput2" class="inputRadioBtn">
+        <input type="radio" onclick="enableBtn()" name="answers" id="optionInput2" class="inputRadioBtn">
         <span id="option2"></span>
       </label>
       <label for="options" class="mb-3">
-        <input type="radio" name="answers" id="optionInput3" class="inputRadioBtn">
+        <input type="radio" onclick="enableBtn()" name="answers" id="optionInput3" class="inputRadioBtn">
         <span id="option3"></span>
       </label>
       <label for="options" class="mb-3">
-        <input type="radio" name="answers" id="optionInput4" class="inputRadioBtn">
+        <input type="radio" onclick="enableBtn()" name="answers" id="optionInput4" class="inputRadioBtn">
         <span id="option4"></span>
       </label>
 
     </div>
 
 
-    <button class="nextBtn overlayBtn my-5" onclick="nextQuestion()">Next</button>
+    <button disabled class="nextBtn overlayBtn my-5" onclick="nextQuestion()">Next</button>
   </div>
 
 

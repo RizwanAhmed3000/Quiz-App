@@ -71,12 +71,13 @@ function nextQuestion() {
     index++
     if(index < quizDataLength){
         loadQuestion();
+        enableBtn();
         resetInputBtn();
     }
 }
 
 function loadQuestion() {
-    question.innerHTML = quizData[index].question;
+    question.innerHTML = `Q: ${quizData[index].question}`;
     inputRadioBtn[0].nextElementSibling.innerText = quizData[index].option1;
     inputRadioBtn[1].nextElementSibling.innerText = quizData[index].option2;
     inputRadioBtn[2].nextElementSibling.innerText = quizData[index].option3;
@@ -100,6 +101,16 @@ function getAnswer(){
     
     return answer;
 };
+
+
+function enableBtn(){
+    if(nextBtn.disabled == false){
+        nextBtn.disabled = true;
+    } else{
+        nextBtn.disabled = false;
+    }
+}
+
 
 loadQuestion();
 
