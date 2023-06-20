@@ -76,13 +76,31 @@
     <!-- Options -->
 
     <div class="optionBox mt-5 d-flex justify-content-center p-3 pb-0 flex-column">
+      <!-- <span class="mb-3 "><input type="radio" name="options" class="radioBtns" id=""><p class="mb-0 ms-3" style="display: inline;">Option 1</p></span>
       <span class="mb-3 "><input type="radio" name="options" class="radioBtns" id=""><p class="mb-0 ms-3" style="display: inline;">Option 1</p></span>
-      <span class="mb-3 "><input type="radio" name="options" class="radioBtns" id=""><p class="mb-0 ms-3" style="display: inline;">Option 1</p></span>
-      <span class="mb-3 "><input type="radio" name="options" class="radioBtns" id=""><p class="mb-0 ms-3" style="display: inline;">Option 1</p></span>
+      <span class="mb-3 "><input type="radio" name="options" class="radioBtns" id=""><p class="mb-0 ms-3" style="display: inline;">Option 1</p></span> -->
+
+      <label for="options" class="mb-3">
+        <input type="radio" name="answers" id="optionInput1" class="inputRadioBtn">
+        <span id="option1"></span>
+      </label>
+      <label for="options" class="mb-3">
+        <input type="radio" name="answers" id="optionInput2" class="inputRadioBtn">
+        <span id="option2"></span>
+      </label>
+      <label for="options" class="mb-3">
+        <input type="radio" name="answers" id="optionInput3" class="inputRadioBtn">
+        <span id="option3"></span>
+      </label>
+      <label for="options" class="mb-3">
+        <input type="radio" name="answers" id="optionInput4" class="inputRadioBtn">
+        <span id="option4"></span>
+      </label>
+
     </div>
 
 
-    <button class="nextBtn overlayBtn my-5">Next</button>
+    <button class="nextBtn overlayBtn my-5" onclick="nextQuestion()">Next</button>
   </div>
 
 
