@@ -89,7 +89,7 @@ function nextQuestion() {
         resetInputBtn();
     } else{
         fadeBox.classList.remove('hide');
-        resultBox.classList.add('showResult')
+        resultBox.classList.remove('notVisible')
     }
 }
 
@@ -128,6 +128,11 @@ function enableBtn(){
     }
 }
 
+
+closeBtn.addEventListener('click', ()=>{
+    fadeBox.classList.add('hide');
+    resultBox.classList.add('notVisible')
+})
 
 loadQuestion();
 
