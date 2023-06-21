@@ -15,6 +15,20 @@ const option2 = document.querySelector('#option2')
 const option3 = document.querySelector('#option3')
 const option4 = document.querySelector('#option4')
 const inputRadioBtn = document.querySelectorAll(".inputRadioBtn")
+const fadeBox = document.querySelector('.fadeBox');
+const resultBox = document.querySelector('.resultBox');
+const totalNumbers = document.querySelector('.totalNumbers');
+const obtMarks = document.querySelector('.obtMarks');
+const percentageText = document.querySelector('.percentage');
+const tryAgainBtn = document.querySelector('.tryAgainBtn');
+const closeBtn = document.querySelector('.closeBtn');
+// console.log(fadeBox, "==> fade box");
+// console.log(resultBox, "==> resultBox");
+// console.log(totalNumbers, "==> totalNumbers");
+// console.log(obtMarks, "==> obtMarks");
+// console.log(percentageText, "==> percentageText");
+// console.log(tryAgainBtn, "==> tryAgainBtn");
+// console.log(closeBtn, "==> closeBtn");
 // console.log(inputRadioBtn[0].nextElementSibling)
 
 
@@ -73,6 +87,9 @@ function nextQuestion() {
         loadQuestion();
         enableBtn();
         resetInputBtn();
+    } else{
+        fadeBox.classList.remove('hide');
+        resultBox.classList.add('showResult')
     }
 }
 
