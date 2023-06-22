@@ -10,7 +10,7 @@
 body {
     width: 100vw;
     height: 100vh;
-    background-color: #eee2ff !important;   
+    background-color: #eee2ff !important;
     overflow: hidden;
 }
 
@@ -58,8 +58,8 @@ body {
     padding: 40px 15px;
     border-radius: 21px;
     background: linear-gradient(145deg, #d6cbe6, #fff2ff);
-    box-shadow:  11px 11px 22px #a79eb3,
-                 -11px -11px 22px #ffffff;
+    box-shadow: 11px 11px 22px #a79eb3,
+        -11px -11px 22px #ffffff;
 
 }
 
@@ -153,11 +153,11 @@ input:focus {
         height: 80vh;
     }
 
-    #email{
+    #email {
         width: 90% !important;
     }
 
-    .passDiv{
+    .passDiv {
         width: 90%;
     }
 

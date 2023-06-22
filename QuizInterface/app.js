@@ -1,19 +1,14 @@
 const activeUser = JSON.parse(localStorage.getItem('activeUserQuiz'))
 const activeUserData = JSON.parse(localStorage.getItem('activeUserData')) || []
 
+//--------Geting all elements-----------//
 
 const overlay = document.querySelector('.overlay');
-// console.log(overlay)
 const question = document.querySelector('#question')
-// console.log(question)
 const nextBtn = document.querySelector('.nextBtn')
-// console.log(nextBtn)
 let timer = document.querySelector('#timer')
-// console.log(timer)
 const username = document.querySelector('.username')
-// console.log(username)
 const optionBox = document.querySelector('.optionBox')
-// console.log(optionBox)
 const option1 = document.querySelector('#option1')
 const option2 = document.querySelector('#option2')
 const option3 = document.querySelector('#option3')
@@ -26,16 +21,6 @@ const obtMarks = document.querySelector('.obtMarks');
 const percentageText = document.querySelector('.percentage');
 const tryAgainBtn = document.querySelector('.tryAgainBtn');
 const closeBtn = document.querySelector('.closeBtn');
-// console.log(fadeBox, "==> fade box");
-// console.log(resultBox, "==> resultBox");
-// console.log(totalNumbers, "==> totalNumbers");
-// console.log(obtMarks, "==> obtMarks");
-// console.log(percentageText, "==> percentageText");
-// console.log(tryAgainBtn, "==> tryAgainBtn");
-// console.log(closeBtn, "==> closeBtn");
-// console.log(inputRadioBtn[0].nextElementSibling)
-
-// console.log(activeUser.emailAddress)
 
 if (!activeUser) {
     window.location.href = "../index.html"
@@ -43,7 +28,7 @@ if (!activeUser) {
 
 username.innerText = activeUser.firstName;
 
-
+//-------------Quiz data here!--------------------//
 
 const quizData = [
     {
@@ -90,10 +75,8 @@ let correctAns = 0;
 
 function nextQuestion() {
     const myAns = getAnswer();
-    // console.log(myAns);
     if (myAns == quizData[index].answer) {
         correctAns++
-        // console.log(correctAns)
     }
     index++
     if (index < quizDataLength) {
@@ -109,7 +92,7 @@ function nextQuestion() {
     }
 }
 
-function saveUserResult(){
+function saveUserResult() {
     const resultData = {
         userEmail: activeUser.emailAddress,
         result: percentageText.innerText,
@@ -173,7 +156,7 @@ function overlayRemove() {
     overlay.style.top = '-100%'
 }
 
-function logoutHandler(){
+function logoutHandler() {
     localStorage.removeItem('activeUserQuiz')
     window.location.href = "../index.html"
 }
