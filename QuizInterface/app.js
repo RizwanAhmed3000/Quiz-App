@@ -35,9 +35,13 @@ const closeBtn = document.querySelector('.closeBtn');
 // console.log(closeBtn, "==> closeBtn");
 // console.log(inputRadioBtn[0].nextElementSibling)
 
+// console.log(activeUser.emailAddress)
+
 if (!activeUser) {
     window.location.href = "../index.html"
 }
+
+username.innerText = activeUser.firstName;
 
 
 
@@ -101,7 +105,18 @@ function nextQuestion() {
         showResult()
         fadeBox.classList.remove('hide');
         resultBox.classList.remove('notVisible')
+        saveUserResult();
     }
+}
+
+function saveUserResult(){
+    const resultData = {
+        userEmail: activeUser.emailAddress,
+        result: percentageText.innerText,
+    }
+
+    activeUserData.push(resultData);
+    localStorage.setItem('activeUserData', JSON.stringify(activeUserData));
 }
 
 function showResult() {
@@ -156,6 +171,11 @@ closeBtn.addEventListener('click', () => {
 
 function overlayRemove() {
     overlay.style.top = '-100%'
+}
+
+function logoutHandler(){
+    localStorage.removeItem('activeUserQuiz')
+    window.location.href = "../index.html"
 }
 
 loadQuestion();
