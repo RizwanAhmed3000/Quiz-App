@@ -1,3 +1,7 @@
+const activeUser = JSON.parse(localStorage.getItem('activeUserQuiz'))
+const activeUserData = JSON.parse(localStorage.getItem('activeUserData')) || []
+
+
 const overlay = document.querySelector('.overlay');
 // console.log(overlay)
 const question = document.querySelector('#question')
@@ -30,6 +34,11 @@ const closeBtn = document.querySelector('.closeBtn');
 // console.log(tryAgainBtn, "==> tryAgainBtn");
 // console.log(closeBtn, "==> closeBtn");
 // console.log(inputRadioBtn[0].nextElementSibling)
+
+if (!activeUser) {
+    window.location.href = "../index.html"
+}
+
 
 
 const quizData = [
@@ -78,19 +87,32 @@ let correctAns = 0;
 function nextQuestion() {
     const myAns = getAnswer();
     // console.log(myAns);
-    if(myAns == quizData[index].answer){
+    if (myAns == quizData[index].answer) {
         correctAns++
         // console.log(correctAns)
     }
     index++
-    if(index < quizDataLength){
+    if (index < quizDataLength) {
         loadQuestion();
         enableBtn();
         resetInputBtn();
-    } else{
+        console.log(correctAns)
+    } else {
+        showResult()
         fadeBox.classList.remove('hide');
         resultBox.classList.remove('notVisible')
     }
+}
+
+function showResult() {
+    totalNumbers.innerHTML = quizDataLength;
+    obtMarks.innerText = correctAns;
+    percentageText.innerText = `${calPercentage(quizDataLength, correctAns)}%`;
+}
+
+function calPercentage(total, obt) {
+    let percentage = (obt / total) * 100;
+    return percentage
 }
 
 function loadQuestion() {
@@ -107,35 +129,33 @@ function resetInputBtn() {
     })
 }
 
-
-function getAnswer(){
+function getAnswer() {
     let answer;
-    inputRadioBtn.forEach((btn)=>{
-        if(btn.checked){
+    inputRadioBtn.forEach((btn) => {
+        if (btn.checked) {
             answer = btn.nextElementSibling.innerText;
         }
     })
-    
+
     return answer;
 };
 
-
-function enableBtn(){
-    if(nextBtn.disabled == false){
+function enableBtn() {
+    if (nextBtn.disabled == false) {
         nextBtn.disabled = true;
-    } else{
+    } else {
         nextBtn.disabled = false;
     }
 }
 
-
-closeBtn.addEventListener('click', ()=>{
+closeBtn.addEventListener('click', () => {
     fadeBox.classList.add('hide');
     resultBox.classList.add('notVisible')
+    window.location.reload();
 })
-
-loadQuestion();
 
 function overlayRemove() {
     overlay.style.top = '-100%'
 }
+
+loadQuestion();

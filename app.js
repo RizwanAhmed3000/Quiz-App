@@ -18,36 +18,36 @@ passwordWarning.style.visibility = "hidden"
 const users = JSON.parse(localStorage.getItem('usersQuiz')) || []
 console.log(users)
 
-function showHide(p){
-    if(p.type == "password"){
+function showHide(p) {
+    if (p.type == "password") {
         p.setAttribute('type', 'text')
         passwordBtn.classList.add('active')
-    }else{
+    } else {
         p.setAttribute('type', 'password')
         passwordBtn.classList.remove('active')
     }
 }
 
-function loginHandler(){
-    if(email.value == "" || password.value == ""){
+function loginHandler() {
+    if (email.value == "" || password.value == "") {
         return alert("bhai fill kar phly")
     }
-    const isUserFound = users.filter((user)=>{
+    const isUserFound = users.filter((user) => {
         return user.emailAddress == email.value
     })
 
-    if(!isUserFound.length){
+    if (!isUserFound.length) {
         return alert("User doesn't exisit")
     }
 
     // console.log(isUserFound)
-    if(isUserFound[0].emailAddress == email.value && isUserFound[0].Password == password.value){
+    if (isUserFound[0].emailAddress == email.value && isUserFound[0].Password == password.value) {
         localStorage.setItem('activeUserQuiz', JSON.stringify(isUserFound[0]))
         window.location.href = "./QuizInterface/index.html"
         email.value = ""
         password.value = ""
 
-    } else{
+    } else {
         alert("wrong email or password")
     }
 
@@ -55,20 +55,20 @@ function loginHandler(){
 
 
 function signupHandler() {
-    
-    const isEmailFound = users.filter((user)=>{
+
+    const isEmailFound = users.filter((user) => {
         return user.emailAddress == emailAddress.value
     })
 
-    if(isEmailFound.length){
+    if (isEmailFound.length) {
         return alert("This email is already in use")
     }
 
-    const isPhoneNumFound = users.filter((user)=>{
+    const isPhoneNumFound = users.filter((user) => {
         return user.PhoneNumber == phoneNumber.value
     })
 
-    if(isPhoneNumFound.length){
+    if (isPhoneNumFound.length) {
         return alert("This phone number is already in use")
     }
 
@@ -78,7 +78,7 @@ function signupHandler() {
     } else {
         if (newPassword.value.length < 7) {
             passwordWarning.style.visibility = "visible"
-            setTimeout(()=>{
+            setTimeout(() => {
                 passwordWarning.style.visibility = "hidden"
             }, 3000)
             return
@@ -108,7 +108,7 @@ function signupHandler() {
         dateOfBirth.value = ""
         dateOfBirth.value = ""
         gender = ""
-       
+
     }
 }
 
@@ -116,7 +116,7 @@ function genderHandler(g) {
     gender = g
 }
 
-function emptyInput(){
+function emptyInput() {
     firstName.value = ""
     lastName.value = ""
     emailAddress.value = ""
@@ -125,5 +125,5 @@ function emptyInput(){
     dateOfBirth.value = ""
     dateOfBirth.value = ""
     gender = ""
-   
+
 }
